@@ -1,0 +1,37 @@
+# Wyklucz katalog virtualenv
+venv/
+*.pyc
+__pycache__/
+
+# Wyklucz pliki specyficzne dla systemu operacyjnego
+.DS_Store
+Thumbs.db
+
+# Wyklucz pliki związane z edytorami/IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Wyklucz pliki konfiguracyjne i logi
+*.log
+*.env
+.env.*
+
+# Wyklucz zależności wbudowane w frameworki Python
+*.egg-info/
+.eggs/
+pip-log.txt
+
+# Wyklucz foldery buildów i cache
+build/
+dist/
+*.egg
+
+# Wyklucz pliki generowane przez system Docker
+docker-compose.override.yml
+
+# Wyklucz dane tymczasowe i prywatne
+*.sqlite3
+*.db
+data/
