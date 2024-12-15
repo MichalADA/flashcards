@@ -8,6 +8,7 @@ class MongoDB:
         self.flashcards_collection = self.db["flashcards"]
         self.learned_flashcards_collection = self.db["learned_flashcards"]
         self.users_collection = self.db["users"]
+        self.grammar_collection = self.db["grammar"]  # Dodanie kolekcji grammar
 
     def get_all_flashcards(self):
         """Pobierz wszystkie fiszki"""
@@ -29,7 +30,7 @@ class MongoDB:
         """Rejestracja nowego użytkownika"""
         if self.users_collection.find_one({"username": username}):
             return False, "Użytkownik już istnieje"
-        
+
         hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
         self.users_collection.insert_one({
             "username": username,
@@ -42,8 +43,20 @@ class MongoDB:
         user = self.users_collection.find_one({"username": username})
         if not user:
             return False, "Nie znaleziono użytkownika"
-        
+
         if bcrypt.checkpw(password.encode('utf-8'), user["password"]):
             return True, "Zalogowano pomyślnie"
         else:
             return False, "Nieprawidłowe hasło"
+
+    def add_grammar_rule(self, rule_data):
+        """Dodaje regułę gramatyczną do bazy danych"""
+        return self.grammar_collection.insert_one(rule_data)
+
+    def get_all_grammar_rules(self):
+        """Pobiera wszystkie reguły gramatyczne"""
+        return list(self.grammar_collection.find({}, {"_id": 0}))
+
+    def get_grammar_by_category(self, category):
+        """Pobiera reguły gramatyczne dla danej kategorii"""
+        return list(self.grammar_collection.find({"category": category}, {"_id": 0}))

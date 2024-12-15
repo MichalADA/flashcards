@@ -1,71 +1,90 @@
-from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.button import Button
-from kivy.uix.label import Label
-from kivy.uix.textinput import TextInput
+# register_screen.py
+from base_screen import BaseScreen
 from db import MongoDB
 
-class RegisterScreen(BoxLayout):
+class RegisterScreen(BaseScreen):
     def __init__(self, manager, **kwargs):
-        super(RegisterScreen, self).__init__(**kwargs)
+        super().__init__(**kwargs)
         self.manager = manager
-        self.orientation = 'vertical'
-        self.spacing = 20
-        self.padding = [20, 20, 20, 20]
-
         self.db = MongoDB()
-
-        # Tytuł
-        self.add_widget(Label(
-            text="Rejestracja",
-            font_size='30sp',
-            size_hint=(1, 0.2)
-        ))
-
-        # Pole tekstowe na nazwę użytkownika
-        self.username_input = TextInput(
-            hint_text="Nazwa użytkownika",
-            multiline=False,
-            size_hint=(1, 0.2)
-        )
-        self.add_widget(self.username_input)
-
-        # Pole tekstowe na hasło
-        self.password_input = TextInput(
-            hint_text="Hasło",
-            password=True,
-            multiline=False,
-            size_hint=(1, 0.2)
-        )
-        self.add_widget(self.password_input)
-
-        # Przycisk "Zarejestruj"
-        register_button = Button(
-            text="Zarejestruj",
-            size_hint=(1, 0.2),
-            background_color=[0.2, 0.6, 0.8, 1]
+        
+        # Dodanie tytułu
+        self.add_widget(self.create_title("Rejestracja"))
+        
+        # Kontener na formularz
+        self.form_container = self.create_container()
+        
+        # Label na błędy
+        self.error_label = self.create_error_label()
+        self.form_container.add_widget(self.error_label)
+        
+        # Pola formularza
+        self.username_input = self.create_text_input("Nazwa użytkownika")
+        self.password_input = self.create_text_input("Hasło", password=True)
+        self.confirm_password_input = self.create_text_input("Potwierdź hasło", password=True)
+        
+        # Ustawienie kolejności tab
+        self.username_input.next_field = self.password_input
+        self.password_input.next_field = self.confirm_password_input
+        
+        # Dodanie pól do formularza
+        self.form_container.add_widget(self.username_input)
+        self.form_container.add_widget(self.password_input)
+        self.form_container.add_widget(self.confirm_password_input)
+        
+        # Przyciski
+        register_button = self.create_button(
+            "Zarejestruj się",
+            self.get_primary_color()
         )
         register_button.bind(on_press=self.register)
-        self.add_widget(register_button)
-
-        # Przycisk "Powrót do logowania"
-        back_button = Button(
-            text="Powrót do logowania",
-            size_hint=(1, 0.2),
-            background_color=[0.8, 0.2, 0.2, 1]
+        
+        back_button = self.create_button(
+            "Powrót do logowania",
+            self.get_secondary_color()
         )
         back_button.bind(on_press=self.go_to_login)
-        self.add_widget(back_button)
+        
+        # Dodanie przycisków do formularza
+        self.form_container.add_widget(register_button)
+        self.form_container.add_widget(back_button)
+        
+        # Dodanie formularza do ekranu
+        self.add_widget(self.form_container)
 
     def register(self, instance):
-        username = self.username_input.text
-        password = self.password_input.text
-        if username and password:
-            success, message = self.db.register_user(username, password)
-            print(message)
-            if success:
-                self.manager.current = 'login'
+        username = self.username_input.text.strip()
+        password = self.password_input.text.strip()
+        confirm_password = self.confirm_password_input.text.strip()
+        
+        # Walidacja pól
+        if not username:
+            self.error_label.text = "Wprowadź nazwę użytkownika"
+            return
+            
+        if not password:
+            self.error_label.text = "Wprowadź hasło"
+            return
+            
+        if not confirm_password:
+            self.error_label.text = "Potwierdź hasło"
+            return
+            
+        if password != confirm_password:
+            self.error_label.text = "Hasła nie są identyczne"
+            return
+            
+        if len(password) < 6:
+            self.error_label.text = "Hasło musi mieć co najmniej 6 znaków"
+            return
+
+        success, message = self.db.register_user(username, password)
+        if success:
+            self.error_label.text = ""
+            self.manager.current = 'login'
         else:
-            print("Wprowadź nazwę użytkownika i hasło")
+            self.error_label.text = message
 
     def go_to_login(self, instance):
+        self.error_label.text = ""
         self.manager.current = 'login'

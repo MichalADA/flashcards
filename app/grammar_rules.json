@@ -1,0 +1,81 @@
+{
+    "grammar_rules": [
+      {
+        "id": "1",
+        "title": "Szyk zdania oznajmującego",
+        "description": "W języku niemieckim orzeczenie zawsze znajduje się na drugim miejscu w zdaniu, np. 'Ich gehe nach Hause'",
+        "examples": [
+          "Ich gehe nach Hause",
+          "Heute fahre ich nach Berlin",
+          "Der Mann kauft ein Buch"
+        ],
+        "category": "syntax"
+      },
+      {
+        "id": "2",
+        "title": "Rodzajniki określone",
+        "description": "Der (rodzaj męski), Die (rodzaj żeński), Das (rodzaj nijaki)",
+        "examples": [
+          "der Mann (mężczyzna)",
+          "die Frau (kobieta)", 
+          "das Kind (dziecko)"
+        ],
+        "category": "articles"
+      },
+      {
+        "id": "3",
+        "title": "Czasowniki modalne",
+        "description": "Najważniejsze czasowniki modalne to: können (móc), müssen (musieć), dürfen (mieć pozwolenie), sollen (powinno się), wollen (chcieć), mögen (lubić)",
+        "examples": [
+          "Ich kann schwimmen",
+          "Du musst arbeiten",
+          "Er will schlafen"
+        ],
+        "category": "verbs"
+      },
+      {
+        "id": "4",
+        "title": "Perfekt",
+        "description": "Czas przeszły Perfekt tworzy się za pomocą czasownika posiłkowego (haben lub sein) i imiesłowu czasu przeszłego (Partizip II)",
+        "examples": [
+          "Ich habe gegessen",
+          "Sie ist gefahren",
+          "Wir haben gespielt"
+        ],
+        "category": "tenses"
+      },
+      {
+        "id": "5",
+        "title": "Deklinacja przymiotników",
+        "description": "Przymiotniki w języku niemieckim odmieniają się przez przypadki w zależności od rodzajnika i rodzaju rzeczownika",
+        "examples": [
+          "der große Mann",
+          "eine schöne Frau",
+          "das kleine Kind"
+        ],
+        "category": "adjectives"
+      },
+      {
+        "id": "6",
+        "title": "Zaimki osobowe",
+        "description": "ich (ja), du (ty), er/sie/es (on/ona/ono), wir (my), ihr (wy), sie/Sie (oni/one/Pan/Pani/Państwo)",
+        "examples": [
+          "Ich bin hier",
+          "Du kannst das",
+          "Sie ist nett"
+        ],
+        "category": "pronouns"
+      },
+      {
+        "id": "7",
+        "title": "Przyimki z celownikiem",
+        "description": "Niektóre przyimki zawsze występują z celownikiem: aus, bei, mit, nach, seit, von, zu",
+        "examples": [
+          "Ich gehe mit dir",
+          "Er kommt aus Deutschland",
+          "Sie wohnt bei ihren Eltern"
+        ],
+        "category": "prepositions"
+      }
+    ]
+  }
