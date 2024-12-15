@@ -60,3 +60,44 @@ class MongoDB:
     def get_grammar_by_category(self, category):
         """Pobiera reguły gramatyczne dla danej kategorii"""
         return list(self.grammar_collection.find({"category": category}, {"_id": 0}))
+    
+    def get_pronunciations(self):
+        """Pobiera wszystkie pliki wymowy"""
+        return list(self.db.pronunciation.find(
+            {"category": "Wymowa"},
+            {"_id": 0}
+        ))
+
+    def get_pronunciation_by_word(self, german_word):
+        """Pobiera wymowę konkretnego słowa"""
+        return self.db.pronunciation.find_one(
+            {"german": german_word, "category": "Wymowa"},
+            {"_id": 0}
+        )
+
+    def delete_pronunciation(self, german_word):
+        """Usuwa wymowę słowa"""
+        return self.db.pronunciation.delete_one({
+            "german": german_word,
+            "category": "Wymowa"
+        })
+    def get_dialogs(self):
+        """Pobiera wszystkie dialogi"""
+        return list(self.db.dialogs.find(
+            {"category": "Dialogi"},
+            {"_id": 0}
+        ))
+
+    def get_dialog_by_name(self, dialog_name):
+        """Pobiera konkretny dialog po nazwie"""
+        return self.db.dialogs.find_one(
+            {"german": dialog_name, "category": "Dialogi"},
+            {"_id": 0}
+        )
+
+    def delete_dialog(self, dialog_name):
+        """Usuwa dialog"""
+        return self.db.dialogs.delete_one({
+            "german": dialog_name,
+            "category": "Dialogi"
+        })
