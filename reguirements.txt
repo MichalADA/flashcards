@@ -1,4 +1,7 @@
 kivy==2.3.0
 pymongo==4.4.0
 
+bcrypt
+
+
 
