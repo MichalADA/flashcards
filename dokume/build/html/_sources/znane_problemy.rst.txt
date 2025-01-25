@@ -1,0 +1,13 @@
+==============
+Znane problemy
+==============
+
+Interfejs użytkownika
+------------------
+* Menu aplikacji wymaga dopracowania - brak wyświetlania zalogowanego użytkownika
+* Interfejs gramatyki jest nieintuicyjny - obecny system przesuwania treści powinien zostać zastąpiony podziałem na działy i osobne ekrany
+
+---------------------
+* Brak powiązania nauczonych fiszek z konkretnymi użytkownikami
+* Konieczność restrukturyzacji bazy danych - potrzeba utworzenia osobnej kolekcji użytkowników
+* Brak aktualizacji widoku nauczonych fiszek w czasie rzeczywistym

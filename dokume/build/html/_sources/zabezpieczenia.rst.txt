@@ -1,0 +1,52 @@
+=============
+Zabezpieczenia
+=============
+
+System bezpieczeństwa
+------------------
+
+Aplikacja implementuje wielopoziomowy system zabezpieczeń chroniący dane użytkowników 
+i zapewniający bezpieczne korzystanie z systemu.
+
+Ochrona kont użytkowników
+^^^^^^^^^^^^^^^^^^^^^
+* Silne hasła:
+
+  * Minimum 8 znaków
+  * Wymagana co najmniej jedna wielka litera
+  * Wymagana co najmniej jedna cyfra
+  * Wymagany co najmniej jeden znak specjalny
+
+* Ochrona przed atakami brute force:
+
+  * Limit 5 nieudanych prób logowania
+  * Automatyczna blokada konta na 5 minut po przekroczeniu limitu
+  * Śledzenie nieudanych prób logowania
+
+Bezpieczeństwo danych
+^^^^^^^^^^^^^^^^^
+* Hashowanie haseł:
+
+  * Wykorzystanie algorytmu bcrypt
+  * Bezpieczne przechowywanie w bazie danych
+  * Niemożliwość odzyskania oryginalnego hasła
+
+* Sanityzacja danych:
+
+  * Usuwanie potencjalnie niebezpiecznych znaków
+  * Walidacja danych wejściowych
+  * Ochrona przed SQL injection
+
+Monitoring i logi
+^^^^^^^^^^^^^
+* System logowania zdarzeń:
+
+  * Rejestracja prób nieudanego logowania
+  * Śledzenie podejrzanych działań
+  * Zapisywanie błędów bezpieczeństwa
+
+* Monitorowanie aktywności:
+
+  * Śledzenie sesji użytkowników
+  * Rejestracja ważnych operacji
+  * Wykrywanie nietypowych zachowań

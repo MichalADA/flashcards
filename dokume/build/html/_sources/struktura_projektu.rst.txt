@@ -1,0 +1,32 @@
+==================
+Struktura projektu
+==================
+
+Organizacja katalogów
+-------------------
+
+.. code-block:: text
+
+    ├── app/
+    │   ├── add_to_base/
+    │   │   ├── add_dialogs.py     # Skrypty dodające dialogi
+    │   │   ├── add_grama.py       # Skrypty dodające gramatykę
+    │   │   ├── add_voice.py       # Skrypty dodające pliki głosowe
+    │   │   └── grammar_rules.json
+    │   ├── base_screen.py
+    │   ├── db.py
+    │   ├── flashcards.py
+    │   └── [pozostałe pliki .py]
+    ├── data/
+    │   └── flashcards.json        # Zawartość bazy danych
+    ├── Dialogs/                   # Pliki audio z dialogami
+    ├── Voice/                     # Nagrania głosowe
+    ├── docker-compose.yml
+    ├── Dockerfile
+    └── requirements.txt
+
+Pliki źródłowe
+------------
+* **app/** - Główny katalog aplikacji zawierający kod źródłowy
+* **data/** - Pliki danych i konfiguracji
+* **Dialogs/** i **Voice/** - Zasoby audio

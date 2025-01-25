@@ -1,0 +1,29 @@
+.. Aplikacja Do Nauki Jezykow documentation master file
+
+================================
+Aplikacja Do Nauki Jezykow
+================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Spis treści
+   :numbered:
+
+   cel_projektu
+   funkcjonalnosci
+   technologie
+   wymagania_systemowe
+   instalacja
+   struktura_projektu
+   opis_kodu
+   zabezpieczenia
+   znane_problemy
+   mozliwosci_rozwoju
+   autorzy
+
+O projekcie
+==========
+
+Aplikacja Flashcards to narzędzie edukacyjne pierwotnie stworzone do nauki języka niemieckiego, 
+z planami rozszerzenia na inne języki. Projekt powstał jako zaliczenie przedmiotu na studiach, 
+koncentrując się na wykorzystaniu technologii MongoDB, Python Kivy oraz Docker.

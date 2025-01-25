@@ -1,0 +1,203 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="pl" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. Cel projektu &mdash; Aplikacja Do Nauki Jezykow  - dokumentacja</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/documentation_options.js?v=9893e7ba"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=4c397337"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Indeks" href="genindex.html" />
+    <link rel="search" title="Szukaj" href="search.html" />
+    <link rel="next" title="2. Funkcjonalności aplikacji" href="funkcjonalnosci.html" />
+    <link rel="prev" title="Aplikacja Do Nauki Jezykow" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Aplikacja Do Nauki Jezykow
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Spis treści</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Cel projektu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funkcjonalnosci.html">2. Funkcjonalności aplikacji</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="funkcjonalnosci.html#glowne-funkcjonalnosci">2.1. Główne funkcjonalności</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="technologie.html">3. Technologie i architektura</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="technologie.html#framework-kivy">3.1. Framework Kivy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="technologie.html#mongodb">3.2. MongoDB</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="technologie.html#skladniki-bazy-danych">3.2.1. Składniki bazy danych:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="technologie.html#docker">3.3. Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="technologie.html#python">3.4. Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="technologie.html#wykorzystane-biblioteki">3.4.1. Wykorzystane biblioteki</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="wymagania_systemowe.html">4. Wymagania systemowe</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="wymagania_systemowe.html#podstawowe-wymagania">4.1. Podstawowe wymagania</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wymagania_systemowe.html#wymagane-biblioteki-python">4.2. Wymagane biblioteki Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="instalacja.html">5. Instalacja</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="instalacja.html#instalacja-z-uzyciem-dockera">5.1. Instalacja z użyciem Dockera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instalacja.html#instalacja-manualna">5.2. Instalacja manualna</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="struktura_projektu.html">6. Struktura projektu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="struktura_projektu.html#organizacja-katalogow">6.1. Organizacja katalogów</a></li>
+<li class="toctree-l2"><a class="reference internal" href="struktura_projektu.html#pliki-zrodlowe">6.2. Pliki źródłowe</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="opis_kodu.html">7. Dokumentacja kodu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="opis_kodu.html#moduly-aplikacji">7.1. Moduły aplikacji</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="opis_kodu.html#base-screen-py">7.1.1. base_screen.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opis_kodu.html#db-py">7.1.2. db.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opis_kodu.html#flashcards-py">7.1.3. flashcards.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opis_kodu.html#grama-py">7.1.4. grama.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opis_kodu.html#learned-flashcards-py">7.1.5. learned_flashcards.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opis_kodu.html#listening-py">7.1.6. listening.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opis_kodu.html#login-screen-py">7.1.7. login_screen.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opis_kodu.html#menu-py">7.1.8. menu.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opis_kodu.html#password-validator-py">7.1.9. password_validator.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opis_kodu.html#register-screen-py">7.1.10. register_screen.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opis_kodu.html#screen-config-py">7.1.11. screen_config.py</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="opis_kodu.html#skrypty-pomocnicze">7.2. Skrypty pomocnicze</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="opis_kodu.html#add-dialogs-py">7.2.1. add_dialogs.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opis_kodu.html#add-grama-py">7.2.2. add_grama.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opis_kodu.html#add-voice-py">7.2.3. add_voice.py</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="opis_kodu.html#pliki-konfiguracyjne">7.3. Pliki konfiguracyjne</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="opis_kodu.html#requirements-txt">7.3.1. requirements.txt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opis_kodu.html#dockerfile">7.3.2. Dockerfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opis_kodu.html#docker-compose-yml">7.3.3. docker-compose.yml</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opis_kodu.html#security-py">7.3.4. security.py</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="opis_kodu.html#integracja-z-baza-danych">7.3.4.1. Integracja z bazą danych:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="opis_kodu.html#przyklad-uzycia-zabezpieczen">7.3.4.2. Przykład użycia zabezpieczeń:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="zabezpieczenia.html">8. Zabezpieczenia</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="zabezpieczenia.html#system-bezpieczenstwa">8.1. System bezpieczeństwa</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="zabezpieczenia.html#ochrona-kont-uzytkownikow">8.1.1. Ochrona kont użytkowników</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zabezpieczenia.html#bezpieczenstwo-danych">8.1.2. Bezpieczeństwo danych</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zabezpieczenia.html#monitoring-i-logi">8.1.3. Monitoring i logi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="znane_problemy.html">9. Znane problemy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="znane_problemy.html#interfejs-uzytkownika">9.1. Interfejs użytkownika</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mozliwosci_rozwoju.html">10. Możliwości rozwoju</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mozliwosci_rozwoju.html#system-wielojezyczny">10.1. System Wielojęzyczny</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mozliwosci_rozwoju.html#system-osiagniec">10.2. System Osiągnięć</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mozliwosci_rozwoju.html#udoskonalenie-systemu-nauki">10.3. Udoskonalenie Systemu Nauki</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="autorzy.html">11. Autorzy</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Aplikacja Do Nauki Jezykow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">1. </span>Cel projektu</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/cel_projektu.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cel-projektu">
+<h1><span class="section-number">1. </span>Cel projektu<a class="headerlink" href="#cel-projektu" title="Link to this heading">¶</a></h1>
+<p>Projekt ma na celu stworzenie aplikacji edukacyjnej umożliwiającej:</p>
+<ul class="simple">
+<li><p>Naukę przy pomocy fiszek</p></li>
+<li><p>Odtwarzanie dialogów i materiałów audio</p></li>
+<li><p>Przeglądanie zasad gramatycznych</p></li>
+</ul>
+<p>Aplikacja została zaprojektowana z myślą o rozszerzeniu na więcej języków, obecnie skupiając się
+na języku niemieckim. Wykorzystuje nowoczesne technologie takie jak MongoDB, Python Kivy oraz Docker,
+co zapewnia skalowalność i łatwość rozbudowy.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Aplikacja Do Nauki Jezykow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="funkcjonalnosci.html" class="btn btn-neutral float-right" title="2. Funkcjonalności aplikacji" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Michał Adamczyk, Mateusz Jagielski.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+===================
+Wymagania systemowe
+===================
+
+Podstawowe wymagania
+------------------
+* Python 3.8+
+* MongoDB
+* Docker i Docker Compose
+* Wirtualne środowisko Python (zalecane)
+
+Wymagane biblioteki Python
+-----------------------
+* Kivy (framework GUI)
+* pymongo (łączność z MongoDB)
+* Pozostałe zależności w pliku requirements.txt

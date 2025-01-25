@@ -1,0 +1,13 @@
+===========
+Cel projektu
+===========
+
+Projekt ma na celu stworzenie aplikacji edukacyjnej umożliwiającej:
+
+* Naukę przy pomocy fiszek
+* Odtwarzanie dialogów i materiałów audio
+* Przeglądanie zasad gramatycznych
+
+Aplikacja została zaprojektowana z myślą o rozszerzeniu na więcej języków, obecnie skupiając się 
+na języku niemieckim. Wykorzystuje nowoczesne technologie takie jak MongoDB, Python Kivy oraz Docker, 
+co zapewnia skalowalność i łatwość rozbudowy.

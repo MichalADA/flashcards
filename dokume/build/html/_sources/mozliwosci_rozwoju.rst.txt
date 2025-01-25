@@ -1,0 +1,19 @@
+==================
+Możliwości rozwoju
+==================
+
+System Wielojęzyczny
+-----------------
+* Dodanie możliwości wyboru różnych języków do nauki
+* Spersonalizowane profile użytkowników
+
+System Osiągnięć
+-------------
+* Wdrożenie systemu odznak i nagród
+* Śledzenie postępów nauki
+
+Udoskonalenie Systemu Nauki
+------------------------
+* Implementacja systemu codziennych zadań
+* Wprowadzenie inteligentnego systemu powtórek
+* Personalizacja ścieżki nauki

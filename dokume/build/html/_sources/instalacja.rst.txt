@@ -1,0 +1,37 @@
+==========
+Instalacja
+==========
+
+Instalacja z użyciem Dockera
+-------------------------
+
+1. Klonowanie repozytorium::
+
+    git clone <adres-repozytorium>
+    cd flashcards
+
+2. Budowa i uruchomienie::
+
+    docker-compose up -d
+
+3. Inicjalizacja bazy danych::
+
+    python app/add_to_base/add_dialogs.py
+    python app/add_to_base/add_grama.py
+    python app/add_to_base/add_voice.py
+
+Instalacja manualna
+----------------
+
+1. Utworzenie wirtualnego środowiska::
+
+    python -m venv myenv
+    source myenv/bin/activate  # Na Windows: myenv\Scripts\activate
+
+2. Instalacja zależności::
+
+    pip install -r requirements.txt
+
+3. Uruchomienie aplikacji::
+
+    python main.py

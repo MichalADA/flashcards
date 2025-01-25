@@ -1,0 +1,45 @@
+=======================
+Technologie i architektura
+=======================
+
+Framework Kivy
+-----------
+* Responsywny interfejs graficzny działający na wielu platformach
+* Obsługa gestów i interakcji dotykowych
+* Wsparcie dla różnych rozdzielczości ekranu
+* Możliwość dostosowania wyglądu poprzez pliki .kv
+
+MongoDB
+------
+* Przechowywanie danych użytkowników i fiszek
+* Skalowalność i wydajność
+* Elastyczny schemat danych
+* Obsługa danych binarnych (audio)
+
+Składniki bazy danych:
+~~~~~~~~~~~~~~~~~~~~~
+* Kolekcja użytkowników
+* Kolekcja fiszek
+* Kolekcja materiałów audio
+* Kolekcja zasad gramatycznych
+
+Docker
+-----
+* Konteneryzacja aplikacji i bazy danych
+* Łatwe wdrażanie na różnych środowiskach
+* Izolacja komponentów
+* Spójne środowisko developmentu
+
+Python
+-----
+* Główny język programowania
+* Bogaty ekosystem bibliotek
+* Łatwa integracja z MongoDB
+* Wsparcie dla asynchronicznego przetwarzania
+
+Wykorzystane biblioteki
+~~~~~~~~~~~~~~~~~~~~
+* Kivy - interfejs użytkownika
+* pymongo - komunikacja z bazą danych
+* bcrypt - szyfrowanie haseł
+* pydub - przetwarzanie audio

@@ -1,0 +1,231 @@
+==================
+Dokumentacja kodu
+==================
+
+Moduły aplikacji
+---------------
+
+base_screen.py
+~~~~~~~~~~~~~
+Moduł odpowiedzialny za podstawowy interfejs aplikacji.
+
+**Główne funkcje:**
+
+* ``BaseScreen`` - klasa bazowa dla wszystkich ekranów
+* ``build()`` - buduje podstawowy układ interfejsu
+* ``on_size()`` - obsługuje zmianę rozmiaru okna
+
+db.py
+~~~~~
+Moduł zarządzający połączeniem z bazą danych MongoDB.
+
+**Główne funkcje:**
+
+* ``connect_to_db()`` - nawiązuje połączenie z bazą danych
+* ``add_user()`` - dodaje nowego użytkownika do bazy
+* ``verify_user()`` - weryfikuje dane logowania
+* ``get_user_data()`` - pobiera dane użytkownika
+
+flashcards.py
+~~~~~~~~~~~~
+Moduł obsługujący system fiszek.
+
+**Główne funkcje:**
+
+* ``FlashcardsScreen`` - główny ekran fiszek
+* ``load_flashcards()`` - ładuje fiszki z bazy danych
+* ``mark_as_learned()`` - oznacza fiszkę jako nauczoną
+* ``add_flashcard()`` - dodaje nową fiszkę
+
+grama.py
+~~~~~~~
+Moduł zawierający zasady gramatyczne.
+
+**Główne funkcje:**
+
+* ``GrammarScreen`` - ekran z zasadami gramatycznymi
+* ``load_rules()`` - ładuje zasady z pliku JSON
+* ``display_rule()`` - wyświetla wybraną regułę
+
+learned_flashcards.py
+~~~~~~~~~~~~~~~~~~~
+Moduł zarządzający nauczonymi fiszkami.
+
+**Główne funkcje:**
+
+* ``LearnedFlashcardsScreen`` - ekran nauczonych fiszek
+* ``update_learned_list()`` - aktualizuje listę nauczonych fiszek
+* ``remove_from_learned()`` - usuwa fiszkę z nauczonych
+
+listening.py
+~~~~~~~~~~~
+Moduł odpowiedzialny za funkcje audio.
+
+**Główne funkcje:**
+
+* ``AudioPlayer`` - klasa obsługująca odtwarzanie
+* ``load_audio()`` - ładuje plik audio
+* ``play_dialog()`` - odtwarza wybrany dialog
+
+login_screen.py
+~~~~~~~~~~~~~
+Moduł obsługujący logowanie.
+
+**Główne funkcje:**
+
+* ``LoginScreen`` - ekran logowania
+* ``validate_input()`` - sprawdza poprawność danych
+* ``process_login()`` - przetwarza próbę logowania
+
+menu.py
+~~~~~~
+Moduł menu głównego.
+
+**Główne funkcje:**
+
+* ``MenuScreen`` - główne menu aplikacji
+* ``create_menu_buttons()`` - tworzy przyciski menu
+* ``handle_selection()`` - obsługuje wybór opcji
+
+password_validator.py
+~~~~~~~~~~~~~~~~~~
+Moduł walidacji haseł.
+
+**Główne funkcje:**
+
+* ``validate_password()`` - sprawdza siłę hasła
+* ``check_requirements()`` - weryfikuje wymagania hasła
+
+register_screen.py
+~~~~~~~~~~~~~~~~
+Moduł rejestracji użytkowników.
+
+**Główne funkcje:**
+
+* ``RegisterScreen`` - ekran rejestracji
+* ``validate_registration()`` - sprawdza dane rejestracji
+* ``create_account()`` - tworzy nowe konto
+
+screen_config.py
+~~~~~~~~~~~~~~
+Moduł konfiguracji ekranów.
+
+**Główne funkcje:**
+
+* ``set_screen_size()`` - ustawia rozmiar ekranu
+* ``configure_layout()`` - konfiguruje układ
+
+
+
+
+Skrypty pomocnicze
+----------------
+
+add_dialogs.py
+~~~~~~~~~~~~
+Skrypt dodający dialogi do bazy danych.
+
+**Główne funkcje:**
+
+* ``load_dialogs()`` - ładuje pliki dialogów
+* ``add_to_database()`` - dodaje dialogi do bazy
+
+add_grama.py
+~~~~~~~~~~
+Skrypt dodający zasady gramatyczne.
+
+**Główne funkcje:**
+
+* ``parse_rules()`` - parsuje zasady z JSON
+* ``upload_rules()`` - dodaje zasady do bazy
+
+add_voice.py
+~~~~~~~~~~
+Skrypt dodający pliki głosowe.
+
+**Główne funkcje:**
+
+* ``process_audio()`` - przetwarza pliki audio
+* ``add_to_voice_collection()`` - dodaje do bazy
+
+Pliki konfiguracyjne
+------------------
+
+requirements.txt
+~~~~~~~~~~~~~~
+Lista wymaganych bibliotek Pythona.
+
+Dockerfile
+~~~~~~~~~
+Konfiguracja kontenera Docker.
+
+docker-compose.yml
+~~~~~~~~~~~~~~~~
+Konfiguracja usług Docker Compose.
+
+
+security.py
+~~~~~~~~~~
+Moduł odpowiedzialny za bezpieczeństwo aplikacji.
+
+**Klasa DatabaseSecurity:**
+
+* ``check_injection(input_str: str) -> bool``
+    - Sprawdza dane wejściowe pod kątem prób SQL injection
+    - Wykrywa potencjalnie niebezpieczne wzorce SQL
+    - Loguje próby ataków
+
+* ``validate_password_strength(password: str) -> Tuple[bool, str]``
+    - Weryfikuje siłę hasła według ustalonych kryteriów
+    - Sprawdza długość, znaki specjalne, wielkie litery i cyfry
+    - Zwraca informację o spełnieniu wymagań
+
+* ``can_attempt_login(username: str) -> Tuple[bool, str]``
+    - Kontroluje próby logowania
+    - Zarządza blokadą konta po nieudanych próbach
+    - Implementuje czasowe blokady
+
+* ``sanitize_input(input_str: str) -> str``
+    - Oczyszcza dane wejściowe
+    - Usuwa potencjalnie niebezpieczne znaki
+    - Zapewnia bezpieczny format danych
+
+* ``check_username_format(username: str) -> Tuple[bool, str]``
+    - Sprawdza poprawność formatu nazwy użytkownika
+    - Weryfikuje długość i dozwolone znaki
+    - Zapobiega użyciu niedozwolonych znaków
+
+* ``hash_password(password: str) -> str`` i ``verify_password(password: str, hashed_password: str) -> bool``
+    - Bezpieczne hashowanie i weryfikacja haseł
+    - Wykorzystanie biblioteki bcrypt
+    - Ochrona przed atakami na hasła
+
+Integracja z bazą danych:
+^^^^^^^^^^^^^^^^^^^^^^^
+Zmodyfikowany moduł ``db.py`` zawiera teraz rozszerzone zabezpieczenia:
+
+* Walidacja wszystkich danych wejściowych
+* Logowanie zdarzeń bezpieczeństwa
+* Zabezpieczenia przed atakami
+* System blokowania kont
+* Bezpieczne zarządzanie hasłami
+
+Przykład użycia zabezpieczeń:
+^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: python
+
+    # Rejestracja użytkownika z walidacją
+    valid_username, msg = security.check_username_format(username)
+    if not valid_username:
+        return False, msg
+        
+    # Sprawdzenie siły hasła
+    valid_password, msg = security.validate_password_strength(password)
+    if not valid_password:
+        return False, msg
+        
+    # Sanityzacja danych
+    clean_username = security.sanitize_input(username)
+    
+    # Hashowanie hasła
+    hashed_pass = security.hash_password(password)

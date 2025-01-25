@@ -1,0 +1,34 @@
+======================
+Funkcjonalności aplikacji
+======================
+
+Główne funkcjonalności
+--------------------
+
+* Uwierzytelnianie użytkowników:
+
+  * Logowanie i rejestracja
+  * Bezpieczne przechowywanie haseł
+
+* System fiszek:
+
+  * Tworzenie i przeglądanie fiszek
+  * Możliwość oznaczania fiszek jako nauczone
+
+* Moduł audio:
+
+  * Odtwarzanie dialogów z bazy danych
+  * Dostęp do materiałów do słuchania
+  * Pliki wymowy pojedynczych słów
+
+* Interfejs użytkownika:
+
+  * Zaprojektowany w Kivy
+  * Responsywny układ
+  * Intuicyjna nawigacja
+
+* Integracja z bazą danych:
+
+  * Wykorzystanie MongoDB
+  * Przechowywanie fiszek i postępów
+  * Zarządzanie materiałami audio
